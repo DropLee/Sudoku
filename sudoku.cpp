@@ -195,7 +195,7 @@ int main(int argc, char* argv[])
 	case 'c':
 	{
 		int num = atoi(argv[2]);
-		if (num <= 0 || strlen(argv[2]) != int(log10(num)) + 1 || num > 1000000)//check range and letter
+		if (num <= 0 || strlen(argv[2]) != double(log10(num)) + 1 || num > 1000000)//check range and letter
 		{
 			cout << "== Invalid Input ==" << endl;
 			cout << "Make sure the number is in the range of 1-1,000,000!" << endl;
@@ -217,7 +217,7 @@ int main(int argc, char* argv[])
 	}
 
 	finish = clock();
-	cout << "Used time = " << double(finish - start) / CLOCKS_PER_SEC << "s" << endl;
+	cout << "Used time = " << (double(finish) - double(start)) / CLOCKS_PER_SEC << "s" << endl;
 
 	return 0;
 }
